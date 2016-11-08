@@ -8,7 +8,7 @@ module.exports = function errorTrace() {
             yield next;
         }
         catch (err) {
-            let errorTime = Date.now()
+            let errorTime = Date.now();
             console.error(chalk.red("["));
             // debug detail
             console.error(chalk.red(errorTime));
