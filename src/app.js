@@ -16,3 +16,4 @@ require("./middleware")(app);
 
 
 app.listen(config.port);
+console.log('app started on port ' + config.port);
