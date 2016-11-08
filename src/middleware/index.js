@@ -12,6 +12,6 @@ module.exports = function(app) {
     app.use(logger());
     app.use(cors({exposeHeaders: ['Authorization'], maxAge: 3600}));
     app.use(errorTrace());
-    app.use(bodyParser());
+    app.use(bodyParser({"jsonLimit":"16mb"}));
     app.use(router.routes());
 };
