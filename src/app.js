@@ -12,6 +12,7 @@ const app = require("koa")();
 const config = require("./config/config");
 
 require("./config/db");
+require("./middleware")(app);
 
 
 app.listen(config.port);
