@@ -7,6 +7,11 @@ const Schema = mongoose.Schema;
 
 let eventV4Schema = new Schema({
     // free schema
-}, {"strict": false, "validateBeforeSave": false});
+}, {
+    "strict": false,
+    "validateBeforeSave": false,
+    "versionKey": false
+});
+
 
 mongoose.model('EventV4', eventV4Schema);
