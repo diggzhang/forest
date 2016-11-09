@@ -11,10 +11,10 @@ router.use("/v4/events", require("../routes/eventv4").routes());
 
 
 /**
- *  Survival API test
+ *  Survival API ping-pong test
  */
-router.all("/", function *() {
-    this.body = "hi jack";
+router.all("/ping", function *() {
+    this.body = "pong";
 });
 
 
