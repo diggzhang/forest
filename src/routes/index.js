@@ -8,7 +8,7 @@ router.use("/v4", require("../routes/v4Api").routes());
 
 
 /**
- * @api {GET} /api/ping Survial ping-pong test
+ * @api {GET} /api/ping ping-pong test
  * @apiName PingPingTest
  * @apiGroup ForAll
  *
@@ -27,7 +27,7 @@ router.use("/v4", require("../routes/v4Api").routes());
  *     Body: Not Found
  */
 router.all("/ping", function *() {
-    this.body = "pong " + Date.now();
+  this.body = "pong " + Date.now();
 });
 
 

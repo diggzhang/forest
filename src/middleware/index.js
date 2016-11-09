@@ -8,16 +8,16 @@ const errorTrace = require("../middleware/error-trace");
 const router = require('../routes');
 
 
-module.exports = function(app) {
-    app.use(logger());
-    app.use(cors(
-        {
-            "exposeHeaders": ["Accept-Ranges", "Content-Encoding",
-                              "Content-Length", "Content-Range", "Authorization"],
-            "maxAge": "3600"
-        }
-    ));
-    app.use(errorTrace());
-    app.use(bodyParser({"jsonLimit":"16mb"}));
-    app.use(router.routes());
+module.exports = function (app) {
+  app.use(logger());
+  app.use(cors(
+    {
+      "exposeHeaders": ["Accept-Ranges", "Content-Encoding",
+        "Content-Length", "Content-Range", "Authorization"],
+      "maxAge": "3600"
+    }
+  ));
+  app.use(errorTrace());
+  app.use(bodyParser({"jsonLimit": "16mb"}));
+  app.use(router.routes());
 };

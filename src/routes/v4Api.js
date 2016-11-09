@@ -7,15 +7,15 @@ const router = new Router();
 
 
 router.use("/events", function *(next) {
-    let forwardedIpsStr = this.get("X-Forwarded-For");
-    let clientIp = this.header["remoteip"];
-    if (clientIp) {
-        this.remoteIp = clientIp;
+  let forwardedIpsStr = this.get("X-Forwarded-For");
+  let clientIp = this.header["remoteip"];
+  if (clientIp) {
+    this.remoteIp = clientIp;
 
-        this.remoteIp = forwardedIpsStr.split(",")[0];
-    }
+    this.remoteIp = forwardedIpsStr.split(",")[0];
+  }
 
-    yield next;
+  yield next;
 });
 
 
@@ -42,8 +42,8 @@ router.use("/events", function *(next) {
  *     HTTP/1.1 400 Validate Error
  */
 router.post("/events", function *() {
-    yield EventV4Ctrl.save(this.request.body, {ua: this.header["user-agent"], ip: this.remoteIp || this.ip});
-    this.status = 204;
+  yield EventV4Ctrl.save(this.request.body, {ua: this.header["user-agent"], ip: this.remoteIp || this.ip});
+  this.status = 204;
 });
 
 
@@ -70,10 +70,8 @@ router.post("/events", function *() {
  *     HTTP/1.1 400 Validate Error
  */
 router.get("/ping", function *() {
-    this.body = "pong " + Date.now();
+  this.body = "pong " + Date.now();
 });
-
-
 
 
 module.exports = router;

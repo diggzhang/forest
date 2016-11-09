@@ -6,11 +6,11 @@ const Schema = mongoose.Schema;
 
 
 let eventV4Schema = new Schema({
-    // free schema
+  // free schema
 }, {
-    "strict": false,
-    "validateBeforeSave": false,
-    "versionKey": false
+  "strict": false,
+  "validateBeforeSave": false,
+  "versionKey": false
 });
 
 
