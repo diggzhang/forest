@@ -10,7 +10,13 @@ const router = require('../routes');
 
 module.exports = function(app) {
     app.use(logger());
-    app.use(cors({exposeHeaders: ['Authorization'], maxAge: 3600}));
+    app.use(cors(
+        {
+            "exposeHeaders": ["Accept-Ranges", "Content-Encoding",
+                              "Content-Length", "Content-Range", "Authorization"],
+            "maxAge": "3600"
+        }
+    ));
     app.use(errorTrace());
     app.use(bodyParser({"jsonLimit":"16mb"}));
     app.use(router.routes());
