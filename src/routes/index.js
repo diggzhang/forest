@@ -14,7 +14,7 @@ router.use("/v4/events", require("../routes/eventv4").routes());
  *  Survival API ping-pong test
  */
 router.all("/ping", function *() {
-    this.body = "pong";
+    this.body = "pong " + Date.now();
 });
 
 
