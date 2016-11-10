@@ -4,6 +4,17 @@
 const router = require("koa-router")({"prefix": "/api"});
 
 
+/**
+ * @apiGroup v4
+ * @RouteBind /api/v4/
+ *
+ * @api {GET} /api/v4/ping
+ * @apiName v4ApiRoutePingPongTest
+ *
+ * @api {POST} /api/v4/events
+ * @apiName v4EventsApi
+ *
+ */
 router.use("/v4", require("../routes/v4Api").routes());
 
 
